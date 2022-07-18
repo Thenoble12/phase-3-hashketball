@@ -144,4 +144,15 @@ def find_player(name)
     return_player 
 end
 
- def shoe_size
+ def shoe_size(name)
+    find_player(name)[:shoe]
+ end
+
+ def player_numbers(name)
+   return_numbers = {}
+    game_hash.each do |team|
+      team[1][:players].each do |player|
+        return_numbers.push(player[:number])
+      end
+    end
+ end
